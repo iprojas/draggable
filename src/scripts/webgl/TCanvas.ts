@@ -14,10 +14,10 @@ export class TCanvas {
   private cards = new THREE.Group()
   private cardParams = {
     width: 1,
-    height: 1.3,
+    height: 1,
     row: 3,
     col: 6,
-    gap: 0.1,
+    gap: 0.07,
   }
 
   private assets: Assets = {
@@ -38,7 +38,7 @@ export class TCanvas {
     image15: { path: 'images/15.jpg' },
     image16: { path: 'images/16.jpg' },
     image17: { path: 'images/17.jpg' },
-    image18: { path: 'images/18.jpg' },
+    image18: { path: 'images/18.jpg' }
   }
 
   constructor(private container: HTMLElement) {
@@ -67,6 +67,7 @@ export class TCanvas {
     const scroller = new VirtualScroll()
     scroller.on((event) => {
       this.cards.userData.target.position.y -= event.deltaY * 0.003
+      this.cards.userData.target.position.x -= event.deltaX * 0.003
     })
 
     window.addEventListener('mousedown', (e) => {
@@ -115,7 +116,7 @@ export class TCanvas {
 
     const centerX = ((width + gap) * (col - 1)) / 2
     const centerY = ((height + gap) * (row - 1)) / 2
-    const halfY = (height + gap) / 2
+    const halfY = (height + gap)
     let i = 0
 
     for (let x = 0; x < col; x++) {
