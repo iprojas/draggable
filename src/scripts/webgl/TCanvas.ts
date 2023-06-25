@@ -13,11 +13,11 @@ export class TCanvas {
 
   private cards = new THREE.Group()
   private cardParams = {
-    width: 0.6,
-    height: 0.6,
+    width: 1,
+    height: 1,
     row: 5,
     col: 10,
-    gap: 0.07,
+    gap: 0.05,
   }
 
   private assets: Assets = {
@@ -85,7 +85,7 @@ export class TCanvas {
   private init() {
     gl.setup(this.container)
     gl.scene.background = new THREE.Color('#000')
-    gl.camera.position.z = this.cardParams.height * 2 + this.cardParams.gap * (this.cardParams.row + 1)
+    gl.camera.position.z = this.cardParams.height * 2 + this.cardParams.gap * (this.cardParams.row + 1) + 2
     gl.setResizeCallback(this.resize)
     this.resize()
 
