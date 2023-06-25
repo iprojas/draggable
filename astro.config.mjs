@@ -3,7 +3,7 @@ import glsl from 'vite-plugin-glsl'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://nemutas.github.io',
+  site: 'https://iprojas.github.io',
   base: '/draggable',
   server: {
     host: true,
